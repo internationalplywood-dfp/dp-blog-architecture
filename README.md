@@ -21,8 +21,8 @@ curl -fsSL -o /var/www/staging/wp-content/mu-plugins/dp-guides-engine.php \
 php -l /var/www/staging/wp-content/mu-plugins/dp-guides-engine.php
 ```
 
-Database password is supplied at runtime via the `DP_DB_PASS` environment variable.
-No credentials are stored in this repository.
+Database credentials are read automatically from the environment's `wp-config.php`.
+Nothing needs to be typed and no credentials are stored in this repository.
 
 ## Rollback
 
