@@ -113,6 +113,10 @@ function dp_guides_css() {
 .blog-page .area-pills a{display:inline-block;background:var(--nav);color:#ffffff!important;font-family:var(--fd);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:9px 16px;border-radius:var(--r);text-decoration:none!important}
 .blog-page .area-pills a:hover{background:#122850}
 body.dp-guide .entry-hero,body.dp-guide .entry-hero-container,body.dp-guide .post-title,body.dp-guide .entry-header .entry-meta,body.dp-guide #comments,body.dp-guide .comments-area{display:none!important}
+/* Kadence's own related-posts carousel: overflows the viewport (1701px vs 1511px)
+   and duplicates the .related-cta band this plugin renders. Posts only. */
+body.dp-guide .entry-related,body.dp-guide .entry-related-carousel{display:none!important}
+body.dp-guide{overflow-x:hidden}
 body.dp-guide .entry-content-wrap{padding:0!important}
 body.dp-guide .content-area,body.dp-guide .site-container{max-width:100%!important}
 @media(max-width:768px){.blog-page .cnt{padding:0 16px}.blog-page .art-header{padding:60px 16px 40px}.blog-page h2{margin-top:36px}.blog-page table{display:block;overflow-x:auto}}
