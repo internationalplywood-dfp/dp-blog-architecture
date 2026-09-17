@@ -352,6 +352,8 @@ function dp_guides_collect_items( $limit = 0, $exclude = array() ) {
 			'tag'     => $tag,
 			'excerpt' => $excerpt,
 			'ts'      => (int) get_post_time( 'U', true, $p ),
+			'date'    => get_the_date( 'F j, Y', $p ),
+			'updated' => get_the_modified_date( 'F j, Y', $p ),
 		);
 	}
 
@@ -396,6 +398,7 @@ add_shortcode( 'dp_guides_grid', function ( $atts ) {
 	foreach ( $items as $it ) {
 		$out .= '<div class="bi-card">'
 			. '<span class="bi-tag">' . esc_html( $it['tag'] ) . '</span>'
+			. '<p class="bi-date">' . esc_html( ( ! empty( $it['updated'] ) && $it['updated'] !== $it['date'] ) ? 'Updated ' . $it['updated'] : $it['date'] ) . '</p>'
 			. '<h3><a href="' . esc_url( $it['url'] ) . '">' . esc_html( $it['title'] ) . '</a></h3>'
 			. '<p>' . esc_html( $it['excerpt'] ) . '</p>'
 			. '<a class="bi-read" href="' . esc_url( $it['url'] ) . '">Read Guide &rarr;</a>'
