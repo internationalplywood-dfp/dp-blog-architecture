@@ -20,7 +20,6 @@ $CAT_NAME = 'Plywood Guides';
 $CAT_SLUG = 'plywood-guides';
 $MARKER   = '_dp_qa_import';
 
-$args    = function_exists( 'WP_CLI\get_runner' ) ? array() : array();
 $cleanup = in_array( 'cleanup', (array) ( $GLOBALS['argv'] ?? array() ), true );
 
 /* ---------------- cleanup mode ---------------- */
